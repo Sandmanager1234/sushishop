@@ -9,7 +9,6 @@ class Promo(models.Model):
         (1, 'Percents'),
         (2, 'Simple')
     )
-
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=2047)
     promocode = models.CharField(max_length=20)
@@ -17,6 +16,8 @@ class Promo(models.Model):
     discount_type = models.SmallIntegerField(choices=DISCOUNT_TYPES)
     category = models.ForeignKey(Category)
     discount = models.DecimalField(max_digits=7, decimal_places=2)
+    start_promo = models.DateField(auto_now_add=True)
+    end_promo = models.DateField(blank=True, null=True)
 
 
 class PromoUserRelation(models.Model):

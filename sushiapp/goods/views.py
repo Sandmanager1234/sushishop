@@ -39,4 +39,4 @@ class GoodListAPIView(generics.ListAPIView):
 class GoodDetailAPIView(generics.RetrieveAPIView):
     serializer_class = GoodSerializer
     queryset = Good.objects.all()
-    lookup_field = 'slug'
+    lookup_field = 'id'
